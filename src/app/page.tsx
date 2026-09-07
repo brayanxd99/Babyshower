@@ -225,13 +225,14 @@ export default function Home() {
                 Con mucha ilusión esperamos la llegada de nuestra pequeña y queremos compartir este momento tan especial con las personas que queremos.
               </p>
               
-              <div className="relative animate-fade-in-up animation-delay-300 w-full flex justify-center mb-12">
+              <div className="relative animate-fade-in-up animation-delay-300 w-full flex justify-center mb-6 md:mb-12">
                 <img 
                   src="/parents.png" 
                   alt="Padres y Bebé" 
                   className="w-full max-w-[1200px] mx-auto hover:scale-105 transition-transform duration-1000 ease-out" 
                   style={{ 
                     filter: 'contrast(1.02)',
+                    clipPath: 'inset(0 0 5% 0)',
                     WebkitMaskImage: 'radial-gradient(ellipse 90% 70% at 50% 50%, black 40%, transparent 100%)',
                     maskImage: 'radial-gradient(ellipse 90% 70% at 50% 50%, black 40%, transparent 100%)'
                   }}

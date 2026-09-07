@@ -43,10 +43,10 @@
 .animation-delay-500 { animation-delay: 500ms; }
 
 body, html {
-  cursor: url('/butterfly.svg') 16 16, auto;
+  cursor: url('/butterfly-cursor.png') 16 16, auto;
 }
 button, a, input, [role="button"], select, textarea {
-  cursor: url('/butterfly.svg') 16 16, pointer !important;
+  cursor: url('/butterfly-cursor.png') 16 16, pointer !important;
 }
 
 @keyframes fly-away {
@@ -59,9 +59,9 @@ button, a, input, [role="button"], select, textarea {
   position: fixed;
   pointer-events: none;
   z-index: 9999;
-  width: 32px;
-  height: 32px;
-  background-image: url('/butterfly.svg');
+  width: 48px;
+  height: 48px;
+  background-image: url('/butterfly.png');
   background-size: contain;
   background-repeat: no-repeat;
   animation: fly-away 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
