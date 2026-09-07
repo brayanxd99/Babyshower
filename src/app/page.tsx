@@ -173,21 +173,32 @@ export default function Home() {
     );
   };
 
+  const handleTabClick = (e: React.MouseEvent, tab: string) => {
+    setActiveTab(tab);
+    // Spawn butterfly
+    const el = document.createElement("div");
+    el.className = "butterfly-particle";
+    el.style.left = `${e.clientX - 16}px`;
+    el.style.top = `${e.clientY - 16}px`;
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 1500);
+  };
+
   if (loading) {
     return <BottleLoader />;
   }
 
   return (
-    <div className="min-h-screen bg-white font-sans selection:bg-[#ff9aa2] selection:text-[#c86b72]">
+    <div className="min-h-screen bg-white font-sans selection:bg-[#ff9aa2] selection:text-[#c86b72] overflow-x-hidden">
       
       {/* HEADER NAV */}
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-40 border-b border-[#ffe0e0] shadow-sm">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center overflow-x-auto no-scrollbar">
           <span className="font-serif text-[#c86b72] font-bold text-2xl tracking-wide flex-shrink-0 mr-6">Baby Shower</span>
           <div className="flex gap-4">
-            <button onClick={() => setActiveTab('inicio')} className={`px-5 py-2 rounded-full transition font-medium text-sm whitespace-nowrap ${activeTab === 'inicio' ? 'bg-[#c86b72] text-white' : 'text-gray-500 hover:bg-[#fff8f5]'}`}>Inicio</button>
-            <button onClick={() => setActiveTab('lista')} className={`px-5 py-2 rounded-full transition font-medium text-sm whitespace-nowrap ${activeTab === 'lista' ? 'bg-[#c86b72] text-white' : 'text-gray-500 hover:bg-[#fff8f5]'}`}>Regalos</button>
-            <button onClick={() => setActiveTab('cart')} className={`px-5 py-2 rounded-full transition font-medium text-sm whitespace-nowrap relative flex items-center gap-2 ${activeTab === 'cart' ? 'bg-[#c86b72] text-white' : 'text-gray-500 hover:bg-[#fff8f5]'}`}>
+            <button onClick={(e) => handleTabClick(e, 'inicio')} className={`px-5 py-2 rounded-full transition font-medium text-sm whitespace-nowrap ${activeTab === 'inicio' ? 'bg-[#c86b72] text-white' : 'text-gray-500 hover:bg-[#fff8f5]'}`}>Inicio</button>
+            <button onClick={(e) => handleTabClick(e, 'lista')} className={`px-5 py-2 rounded-full transition font-medium text-sm whitespace-nowrap ${activeTab === 'lista' ? 'bg-[#c86b72] text-white' : 'text-gray-500 hover:bg-[#fff8f5]'}`}>Regalos</button>
+            <button onClick={(e) => handleTabClick(e, 'cart')} className={`px-5 py-2 rounded-full transition font-medium text-sm whitespace-nowrap relative flex items-center gap-2 ${activeTab === 'cart' ? 'bg-[#c86b72] text-white' : 'text-gray-500 hover:bg-[#fff8f5]'}`}>
               Carrito <ShoppingCart size={16} />
               {cart.length > 0 && <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#ff9aa2] text-white text-[10px] flex items-center justify-center font-bold border-2 border-white rounded-full">{cart.length}</span>}
             </button>
@@ -203,9 +214,8 @@ export default function Home() {
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
             
             {/* HERO SECTION */}
-            <div className="max-w-6xl mx-auto px-4 pt-12 pb-8 text-center relative">
-              {/* Decorative background blob */}
-              <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[500px] bg-gradient-to-tr from-[#ffe0e0] to-[#fce8d5] rounded-full blur-3xl opacity-30 -z-10 animate-float"></div>
+            <div className="max-w-7xl mx-auto px-4 pt-12 pb-8 text-center relative">
+              <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-tr from-[#ffe0e0] to-[#fce8d5] rounded-full blur-3xl opacity-30 -z-10 animate-float"></div>
 
               <h3 className="text-[#c86b72] font-medium tracking-[0.2em] uppercase text-sm mb-4 animate-fade-in-up">TE INVITAMOS A CELEBRAR</h3>
               <h1 className="text-5xl md:text-7xl font-serif text-[#c86b72] mb-6 leading-tight animate-fade-in-up animation-delay-100">
@@ -215,19 +225,23 @@ export default function Home() {
                 Con mucha ilusión esperamos la llegada de nuestra pequeña y queremos compartir este momento tan especial con las personas que queremos.
               </p>
               
-              <div className="relative animate-fade-in-up animation-delay-300">
+              <div className="relative animate-fade-in-up animation-delay-300 w-full flex justify-center mb-12">
                 <img 
                   src="/parents.png" 
                   alt="Padres y Bebé" 
-                  className="w-full max-w-4xl mx-auto mb-12 mix-blend-multiply hover:scale-105 transition-transform duration-700 ease-out" 
-                  style={{ filter: 'contrast(1.05)' }}
+                  className="w-full max-w-[1200px] mx-auto hover:scale-105 transition-transform duration-1000 ease-out" 
+                  style={{ 
+                    filter: 'contrast(1.02)',
+                    WebkitMaskImage: 'radial-gradient(ellipse 90% 70% at 50% 50%, black 40%, transparent 100%)',
+                    maskImage: 'radial-gradient(ellipse 90% 70% at 50% 50%, black 40%, transparent 100%)'
+                  }}
                 />
               </div>
 
               <div className="animate-fade-in-up animation-delay-400">
                 <button 
-                  onClick={() => setActiveTab('lista')}
-                  className="bg-[#c86b72] hover:bg-[#b85860] text-white px-10 py-4 rounded-full font-bold transition text-lg shadow-xl hover:shadow-2xl hover:-translate-y-2 transform duration-300 mb-20 relative overflow-hidden group"
+                  onClick={(e) => handleTabClick(e, 'lista')}
+                  className="bg-[#c86b72] hover:bg-[#b85860] text-white px-12 py-5 rounded-full font-bold transition text-xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transform duration-300 mb-20 relative overflow-hidden group"
                 >
                   <span className="relative z-10">Ver Lista de Regalos</span>
                   <div className="absolute inset-0 h-full w-full bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
