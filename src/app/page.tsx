@@ -203,23 +203,36 @@ export default function Home() {
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
             
             {/* HERO SECTION */}
-            <div className="max-w-5xl mx-auto px-6 pt-10 text-center">
-              <h3 className="text-[#c86b72] font-medium tracking-[0.2em] uppercase text-sm mb-4">TE INVITAMOS A CELEBRAR</h3>
-              <h1 className="text-4xl md:text-6xl font-serif text-[#c86b72] mb-6 leading-tight">
+            <div className="max-w-6xl mx-auto px-4 pt-12 pb-8 text-center relative">
+              {/* Decorative background blob */}
+              <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[500px] bg-gradient-to-tr from-[#ffe0e0] to-[#fce8d5] rounded-full blur-3xl opacity-30 -z-10 animate-float"></div>
+
+              <h3 className="text-[#c86b72] font-medium tracking-[0.2em] uppercase text-sm mb-4 animate-fade-in-up">TE INVITAMOS A CELEBRAR</h3>
+              <h1 className="text-5xl md:text-7xl font-serif text-[#c86b72] mb-6 leading-tight animate-fade-in-up animation-delay-100">
                 Una nueva historia <br/>está por comenzar...
               </h1>
-              <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed mb-10">
+              <p className="text-gray-600 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed mb-12 animate-fade-in-up animation-delay-200">
                 Con mucha ilusión esperamos la llegada de nuestra pequeña y queremos compartir este momento tan especial con las personas que queremos.
               </p>
               
-              <img src="/parents.png" alt="Padres y Bebé" className="w-full max-w-4xl mx-auto mb-10" />
+              <div className="relative animate-fade-in-up animation-delay-300">
+                <img 
+                  src="/parents.png" 
+                  alt="Padres y Bebé" 
+                  className="w-full max-w-4xl mx-auto mb-12 mix-blend-multiply hover:scale-105 transition-transform duration-700 ease-out" 
+                  style={{ filter: 'contrast(1.05)' }}
+                />
+              </div>
 
-              <button 
-                onClick={() => setActiveTab('lista')}
-                className="bg-[#c86b72] hover:bg-[#b85860] text-white px-10 py-4 rounded-full font-medium transition text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform duration-200 mb-20"
-              >
-                Ver Lista de Regalos
-              </button>
+              <div className="animate-fade-in-up animation-delay-400">
+                <button 
+                  onClick={() => setActiveTab('lista')}
+                  className="bg-[#c86b72] hover:bg-[#b85860] text-white px-10 py-4 rounded-full font-bold transition text-lg shadow-xl hover:shadow-2xl hover:-translate-y-2 transform duration-300 mb-20 relative overflow-hidden group"
+                >
+                  <span className="relative z-10">Ver Lista de Regalos</span>
+                  <div className="absolute inset-0 h-full w-full bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                </button>
+              </div>
             </div>
 
             {/* INFO SECTION (50/50 SPLIT) */}
@@ -276,7 +289,7 @@ export default function Home() {
               </div>
               
               <div className="mt-20">
-                <img src="/toys.png" alt="Juguetes y regalos" className="w-full max-w-3xl mx-auto" />
+                <img src="/toys.png" alt="Juguetes y regalos" className="w-full max-w-3xl mx-auto mix-blend-multiply" />
               </div>
             </div>
           </div>
