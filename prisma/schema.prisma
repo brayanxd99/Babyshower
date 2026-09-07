@@ -1,0 +1,32 @@
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Product {
+  id               String   @id @default(cuid())
+  name             String
+  category         String
+  quantityNeeded   Int
+  priority         String
+  hasLink          Boolean  @default(false)
+  linkUrl          String?
+  description      String?
+  reservations     Reservation[]
+}
+
+model Reservation {
+  id           String   @id @default(cuid())
+  productId    String
+  product      Product  @relation(fields: [productId], references: [id])
+  guestName    String
+  quantity     Int
+  whatsapp     String?
+  message      String?
+  createdAt    DateTime @default(now())
+}
