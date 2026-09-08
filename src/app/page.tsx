@@ -193,13 +193,13 @@ export default function Home() {
       
       {/* HEADER NAV */}
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-40 border-b border-[#ffe0e0] shadow-sm">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center overflow-x-auto no-scrollbar">
-          <span className="font-serif text-[#c86b72] font-bold text-2xl tracking-wide flex-shrink-0 mr-6">Baby Shower</span>
-          <div className="flex gap-4">
-            <button onClick={(e) => handleTabClick(e, 'inicio')} className={`px-5 py-2 rounded-full transition font-medium text-sm whitespace-nowrap ${activeTab === 'inicio' ? 'bg-[#c86b72] text-white' : 'text-gray-500 hover:bg-[#fff8f5]'}`}>Inicio</button>
-            <button onClick={(e) => handleTabClick(e, 'lista')} className={`px-5 py-2 rounded-full transition font-medium text-sm whitespace-nowrap ${activeTab === 'lista' ? 'bg-[#c86b72] text-white' : 'text-gray-500 hover:bg-[#fff8f5]'}`}>Regalos</button>
-            <button onClick={(e) => handleTabClick(e, 'cart')} className={`px-5 py-2 rounded-full transition font-medium text-sm whitespace-nowrap relative flex items-center gap-2 ${activeTab === 'cart' ? 'bg-[#c86b72] text-white' : 'text-gray-500 hover:bg-[#fff8f5]'}`}>
-              Carrito <ShoppingCart size={16} />
+        <div className="max-w-6xl mx-auto px-4 py-3 md:py-4 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
+          <span className="font-serif text-[#c86b72] font-bold text-2xl tracking-wide flex-shrink-0">Baby Shower</span>
+          <div className="flex gap-2 sm:gap-4 justify-center w-full md:w-auto">
+            <button onClick={(e) => handleTabClick(e, 'inicio')} className={`px-4 sm:px-5 py-2 rounded-full transition font-medium text-xs sm:text-sm whitespace-nowrap ${activeTab === 'inicio' ? 'bg-[#c86b72] text-white' : 'text-gray-500 hover:bg-[#fff8f5]'}`}>Inicio</button>
+            <button onClick={(e) => handleTabClick(e, 'lista')} className={`px-4 sm:px-5 py-2 rounded-full transition font-medium text-xs sm:text-sm whitespace-nowrap ${activeTab === 'lista' ? 'bg-[#c86b72] text-white' : 'text-gray-500 hover:bg-[#fff8f5]'}`}>Regalos</button>
+            <button onClick={(e) => handleTabClick(e, 'cart')} className={`px-4 sm:px-5 py-2 rounded-full transition font-medium text-xs sm:text-sm whitespace-nowrap relative flex items-center gap-2 ${activeTab === 'cart' ? 'bg-[#c86b72] text-white' : 'text-gray-500 hover:bg-[#fff8f5]'}`}>
+              Carrito <ShoppingCart size={14} className="sm:w-4 sm:h-4" />
               {cart.length > 0 && <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#ff9aa2] text-white text-[10px] flex items-center justify-center font-bold border-2 border-white rounded-full">{cart.length}</span>}
             </button>
           </div>
@@ -207,7 +207,7 @@ export default function Home() {
       </nav>
 
       {/* TABS CONTENT */}
-      <main className="pt-24 pb-0">
+      <main className="pt-32 md:pt-24 pb-0">
         
         {/* INICIO TAB */}
         {activeTab === 'inicio' && (
