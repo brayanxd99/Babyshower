@@ -275,17 +275,33 @@ export default function Home() {
           </div>
         )}
 
-        {/* LISTA TAB */}
+        {/* LISTA DE REGALOS TAB */}
         {activeTab === 'lista' && (
-          <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 min-h-screen bg-[#fff8f5] py-16 px-4 md:px-8">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-serif text-[#c86b72] mb-6">Mesa de Regalos</h2>
-                <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-                  Elige el regalo que quieras compartir con nuestra bebé y resérvalo para ayudarnos a evitar regalos repetidos.
-                </p>
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 pb-20">
+            
+            {/* HEADER REGALOS CON IMAGEN */}
+            <div className="max-w-7xl mx-auto px-4 mb-12 text-center relative">
+              <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-tr from-[#ffe0e0] to-[#fce8d5] rounded-full blur-3xl opacity-40 -z-10 animate-float"></div>
+              
+              <div className="relative animate-fade-in-up w-full flex justify-center mb-6">
+                <img 
+                  src="/toys.png" 
+                  alt="Juguetes y regalos" 
+                  className="w-full max-w-4xl mx-auto hover:scale-105 transition-transform duration-1000 ease-out"
+                  style={{ 
+                    filter: 'contrast(1.05)',
+                    clipPath: 'inset(0 0 5% 0)',
+                    WebkitMaskImage: 'radial-gradient(ellipse 90% 70% at 50% 50%, black 50%, transparent 100%)',
+                    maskImage: 'radial-gradient(ellipse 90% 70% at 50% 50%, black 50%, transparent 100%)'
+                  }}
+                />
               </div>
 
+              <h2 className="text-4xl md:text-5xl font-serif text-[#c86b72] mb-4 animate-fade-in-up animation-delay-100">Mesa de Regalos</h2>
+              <p className="text-gray-500 max-w-xl mx-auto text-lg animate-fade-in-up animation-delay-200">Selecciona los detallitos con los que te gustaría consentir a nuestra bebé.</p>
+            </div>
+
+            <div className="max-w-6xl mx-auto px-6">
               {/* Filters */}
               <div className="flex flex-wrap gap-3 mb-12 justify-center">
                 {categories.map(cat => (
@@ -301,10 +317,6 @@ export default function Home() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredProducts.map(renderProductCard)}
-              </div>
-              
-              <div className="mt-20">
-                <img src="/toys.png" alt="Juguetes y regalos" className="w-full max-w-3xl mx-auto mix-blend-multiply" />
               </div>
             </div>
           </div>
