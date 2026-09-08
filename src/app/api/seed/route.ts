@@ -7,7 +7,7 @@ const products = [
     {"name": "Cobijas", "category": "Dormir", "quantityNeeded": 3, "priority": "Alta", "hasLink": false, "description": "Livianas: algodón o tejido transpirable. Térmica: abrigada pero suave."},
     {"name": "Fular o cargador", "category": "Esenciales", "quantityNeeded": 1, "priority": "Alta", "hasLink": true, "description": "Ergonómico, ajustable y apto para recién nacido."},
     {"name": "Juegos de estimulación sensorial", "category": "Estimulación", "quantityNeeded": 2, "priority": "Alta", "hasLink": true, "description": "Juguetes con texturas, sonidos y colores vivos."},
-    {"name": "Pañalera", "category": "Otros", "quantityNeeded": 1, "priority": "Muy alta", "hasLink": true, "description": "Preferiblemente tipo morral, cómoda, resistente."},
+    {"name": "Regalo sorpresa", "category": "Otros", "quantityNeeded": 4, "priority": "Media", "hasLink": false, "description": "Un detalle especial y sorpresa que quieras compartir con nosotros."},
     {"name": "Toallas de baño", "category": "Baño", "quantityNeeded": 3, "priority": "Muy alta", "hasLink": false, "description": "Suaves, absorbentes y preferiblemente de algodón."},
     {"name": "Kit de aseo", "category": "Baño", "quantityNeeded": 1, "priority": "Muy alta", "hasLink": true, "description": "Para recién nacido: cepillo suave, cortaúñas/lima, aspirador nasal."},
     {"name": "Cambiador", "category": "Esenciales", "quantityNeeded": 2, "priority": "Muy alta", "hasLink": true, "description": "Casa: impermeable. Portátil: plegable."},

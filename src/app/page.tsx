@@ -241,7 +241,7 @@ export default function Home() {
                   alt="Padres y Bebé" 
                   className="w-full max-w-[1200px] mx-auto hover:scale-105 transition-transform duration-1000 ease-out" 
                   style={{ 
-                    filter: 'contrast(1.02)',
+                    filter: 'contrast(1.02) hue-rotate(-25deg) saturate(1.3) sepia(0.1)',
                     clipPath: 'inset(0 0 5% 0)',
                     WebkitMaskImage: 'radial-gradient(ellipse 90% 70% at 50% 50%, black 40%, transparent 100%)',
                     maskImage: 'radial-gradient(ellipse 90% 70% at 50% 50%, black 40%, transparent 100%)'
@@ -272,14 +272,24 @@ export default function Home() {
                 </p>
               </div>
               
-              <div className="w-full md:w-1/2 bg-[#fce8d5] py-24 px-8 flex flex-col items-center justify-center text-center">
-                <div className="w-16 h-16 rounded-full bg-white/50 flex items-center justify-center mb-6 text-[#c86b72]">
-                   <MapPin size={32} className="opacity-50" />
+              {/* Dónde */}
+              <div className="w-full md:w-1/2 bg-[#fce8d5] p-12 md:p-20 flex flex-col items-center justify-center text-center">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-[#c86b72] mb-6 shadow-sm">
+                  <MapPin size={32} />
                 </div>
-                <h2 className="text-5xl font-serif text-[#5d4a46] mb-4">¿Dónde?</h2>
-                <p className="text-[#8c746e] text-lg tracking-wide">
-                  Calle 185 #55-55<br/>Salón conjunto Villanova 3
-                </p>
+                <h3 className="text-2xl font-serif text-[#c86b72] mb-4">¿Dónde?</h3>
+                <p className="text-gray-600 mb-6">Calle 185 #55-55<br/>Salón conjunto Villanova 3</p>
+                <div className="w-full max-w-sm rounded-xl overflow-hidden shadow-md border-4 border-white">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.223403565578!2d-74.0487002!3d4.7570415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f858c0df1b80d%3A0xc3f34ed2f6f57849!2sCl.%20185%20%2355-55%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" 
+                    width="100%" 
+                    height="180" 
+                    style={{ border: 0 }} 
+                    allowFullScreen={true} 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>
@@ -299,7 +309,7 @@ export default function Home() {
                   alt="Juguetes y regalos" 
                   className="w-full max-w-4xl mx-auto hover:scale-105 transition-transform duration-1000 ease-out"
                   style={{ 
-                    filter: 'contrast(1.05)',
+                    filter: 'contrast(1.05) hue-rotate(-25deg) saturate(1.3) sepia(0.1)',
                     clipPath: 'inset(0 0 5% 0)',
                     WebkitMaskImage: 'radial-gradient(ellipse 90% 70% at 50% 50%, black 50%, transparent 100%)',
                     maskImage: 'radial-gradient(ellipse 90% 70% at 50% 50%, black 50%, transparent 100%)'
