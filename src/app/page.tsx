@@ -173,15 +173,25 @@ export default function Home() {
     );
   };
 
+  useEffect(() => {
+    const handleGlobalClick = (e: MouseEvent) => {
+      // Avoid spawning when clicking inputs to not distract from typing
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      
+      const el = document.createElement("div");
+      el.className = "butterfly-particle";
+      el.style.left = `${e.clientX - 24}px`;
+      el.style.top = `${e.clientY - 24}px`;
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 1500);
+    };
+
+    window.addEventListener('click', handleGlobalClick);
+    return () => window.removeEventListener('click', handleGlobalClick);
+  }, []);
+
   const handleTabClick = (e: React.MouseEvent, tab: string) => {
     setActiveTab(tab);
-    // Spawn butterfly
-    const el = document.createElement("div");
-    el.className = "butterfly-particle";
-    el.style.left = `${e.clientX - 16}px`;
-    el.style.top = `${e.clientY - 16}px`;
-    document.body.appendChild(el);
-    setTimeout(() => el.remove(), 1500);
   };
 
   if (loading) {
