@@ -6,7 +6,7 @@ const products = [
     {"name": "Tina de baño", "category": "Baño", "quantityNeeded": 1, "priority": "Alta", "hasLink": true, "description": "Preferiblemente plegable, estable, antideslizante."},
     {"name": "Cobijas", "category": "Dormir", "quantityNeeded": 3, "priority": "Alta", "hasLink": false, "description": "Livianas: algodón o tejido transpirable. Térmica: abrigada pero suave."},
     {"name": "Fular o cargador", "category": "Esenciales", "quantityNeeded": 1, "priority": "Alta", "hasLink": true, "description": "Ergonómico, ajustable y apto para recién nacido."},
-    {"name": "Teteros", "category": "Alimentación", "quantityNeeded": 2, "priority": "Alta", "hasLink": true, "description": "Kits pequeños, preferiblemente anticólicos."},
+    {"name": "Juegos de estimulación sensorial", "category": "Estimulación", "quantityNeeded": 2, "priority": "Alta", "hasLink": true, "description": "Juguetes con texturas, sonidos y colores vivos."},
     {"name": "Pañalera", "category": "Otros", "quantityNeeded": 1, "priority": "Muy alta", "hasLink": true, "description": "Preferiblemente tipo morral, cómoda, resistente."},
     {"name": "Toallas de baño", "category": "Baño", "quantityNeeded": 3, "priority": "Muy alta", "hasLink": false, "description": "Suaves, absorbentes y preferiblemente de algodón."},
     {"name": "Kit de aseo", "category": "Baño", "quantityNeeded": 1, "priority": "Muy alta", "hasLink": true, "description": "Para recién nacido: cepillo suave, cortaúñas/lima, aspirador nasal."},
