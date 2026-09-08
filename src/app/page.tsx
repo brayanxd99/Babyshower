@@ -278,10 +278,10 @@ export default function Home() {
                   <MapPin size={32} />
                 </div>
                 <h3 className="text-2xl font-serif text-[#c86b72] mb-4">¿Dónde?</h3>
-                <p className="text-gray-600 mb-6">Calle 185 #55-55<br/>Salón conjunto Villanova 3</p>
+                <p className="text-gray-600 mb-6">Calle 187 #55-55<br/>Salón conjunto Villanova 3</p>
                 <div className="w-full max-w-sm rounded-xl overflow-hidden shadow-md border-4 border-white">
                   <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.223403565578!2d-74.0487002!3d4.7570415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f858c0df1b80d%3A0xc3f34ed2f6f57849!2sCl.%20185%20%2355-55%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" 
+                    src="https://maps.google.com/maps?q=4.7659297,-74.0486974&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                     width="100%" 
                     height="180" 
                     style={{ border: 0 }} 
