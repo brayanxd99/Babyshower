@@ -268,7 +268,7 @@ export default function Home() {
                 </div>
                 <h2 className="text-5xl font-serif text-[#5d4a46] mb-4">¿Cuándo?</h2>
                 <p className="text-[#8c746e] text-lg tracking-wide">
-                  17 de octubre<br/>a las 3:00 pm
+                  17 de octubre<br/>a las 2:00 pm
                 </p>
               </div>
               
