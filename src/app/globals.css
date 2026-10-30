@@ -6,63 +6,117 @@
   }
 }
 
-@keyframes fillBottle {
+/* Font Families matching SELAH Brand Guidelines */
+.font-editorial {
+  font-family: 'Cormorant Garamond', 'Latosce', 'Didot', 'Playfair Display', Georgia, serif;
+}
+
+.font-sans-clean {
+  font-family: 'Century Gothic', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 3D Envelope Flip Utilities */
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Animations */
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+.animate-gentle-float {
+  animation: gentleFloat 4s ease-in-out infinite;
+}
+
+@keyframes beadSlide {
   0% {
-    height: 0%;
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
   }
   100% {
-    height: 80%; /* Fill up to the neck */
+    transform: translateX(160px);
+    opacity: 0;
   }
 }
 
-.animate-fill-bottle {
-  animation: fillBottle 1.5s ease-in-out forwards;
+.animate-bead-1 {
+  animation: beadSlide 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+.animate-bead-2 {
+  animation: beadSlide 2.4s cubic-bezier(0.4, 0, 0.2, 1) 0.6s infinite;
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
+.animate-bead-3 {
+  animation: beadSlide 2.4s cubic-bezier(0.4, 0, 0.2, 1) 1.2s infinite;
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+.animate-bead-4 {
+  animation: beadSlide 2.4s cubic-bezier(0.4, 0, 0.2, 1) 1.8s infinite;
 }
-.animate-fade-in-up {
-  opacity: 0;
-  animation: fadeInUp 1s ease-out forwards;
-}
-.animation-delay-100 { animation-delay: 100ms; }
-.animation-delay-200 { animation-delay: 200ms; }
-.animation-delay-300 { animation-delay: 300ms; }
-.animation-delay-400 { animation-delay: 400ms; }
-.animation-delay-500 { animation-delay: 500ms; }
 
-body, html {
+@keyframes sealPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(167, 84, 112, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(167, 84, 112, 0);
+    transform: scale(1.03);
+  }
+}
+
+.animate-seal-pulse {
+  animation: sealPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes shimmerGlow {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.animate-shimmer-glow {
+  animation: shimmerGlow 3s ease-in-out infinite;
+}
+
+/* Baby Shower legacy page scoped styles */
+.babyshower-scope {
   cursor: url('/butterfly-cursor.png') 16 16, auto;
 }
-button, a, input, [role="button"], select, textarea {
+.babyshower-scope button, 
+.babyshower-scope a, 
+.babyshower-scope input {
   cursor: url('/butterfly-cursor.png') 16 16, pointer !important;
-}
-
-@keyframes fly-away {
-  0% { transform: scale(1) translate(0, 0) rotate(0deg); opacity: 1; }
-  25% { transform: scale(1.1) translate(20px, -50px) rotate(15deg); opacity: 1; }
-  50% { transform: scale(1) translate(40px, -100px) rotate(-10deg); opacity: 0.8; }
-  100% { transform: scale(0.5) translate(100px, -200px) rotate(45deg); opacity: 0; }
-}
-.butterfly-particle {
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  width: 48px;
-  height: 48px;
-  background-image: url('/butterfly.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  animation: fly-away 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
