@@ -159,8 +159,8 @@ export default function SelahPage() {
   const [loading, setLoading] = useState(true);
   const [isFlipped, setIsFlipped] = useState(false);
 
-  // User will provide exact instagram URL later
-  const instagramUrl = "https://www.instagram.com/";
+  // Official Instagram Link
+  const instagramUrl = "https://www.instagram.com/selah_promesas?psln=MWRqYjhnZGVpaHl3Yg==";
 
   return (
     <>
@@ -293,7 +293,7 @@ export default function SelahPage() {
                   className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#a75470] to-[#b8637c] text-white font-sans-clean text-xs md:text-sm font-medium tracking-wide shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300"
                 >
                   <InstagramIcon className="w-4 h-4 text-white" />
-                  <span>Conectar en Instagram</span>
+                  <span>@selah_promesas</span>
                 </a>
 
                 {/* Flip Back Link */}

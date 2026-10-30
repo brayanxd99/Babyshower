@@ -2,10 +2,34 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SELAH | Calma en tu día, fe en tu historia",
-  description: "Promesa que dio fruto a la idea de negocio. Calma en tu día, fe en tu historia.",
+  title: "SELAH Promesas | Calma en tu día, fe en tu historia",
+  description: "Promesa que dió fruto a la idea de negocio. Calma en tu día, fe en tu historia. @selah_promesas",
+  metadataBase: new URL("https://babyshower-ochre.vercel.app"),
+  openGraph: {
+    title: "SELAH Promesas | Calma en tu día, fe en tu historia",
+    description: "Promesa que dió fruto a la idea de negocio. Calma en tu día, fe en tu historia.",
+    url: "https://babyshower-ochre.vercel.app",
+    siteName: "SELAH Promesas",
+    images: [
+      {
+        url: "/selah-logo.png",
+        width: 765,
+        height: 323,
+        alt: "SELAH Promesas",
+      },
+    ],
+    locale: "es_CO",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SELAH Promesas | Calma en tu día, fe en tu historia",
+    description: "Promesa que dió fruto a la idea de negocio. Calma en tu día, fe en tu historia.",
+    images: ["/selah-logo.png"],
+  },
   icons: {
     icon: "/selah-logo.png",
+    apple: "/selah-logo.png",
   },
 };
 
