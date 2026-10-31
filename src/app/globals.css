@@ -15,31 +15,57 @@
   font-family: 'Century Gothic', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* 3D Envelope Flip Utilities */
+/* 3D Envelope Flip Utilities (Fully WebKit & Safari iOS compatible) */
 .perspective-1200 {
   perspective: 1200px;
+  -webkit-perspective: 1200px;
 }
 
 .transform-style-3d {
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
 }
 
-.backface-hidden {
+.card-face {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.card-face-front {
+  transform: rotateY(0deg) translateZ(1px);
+  -webkit-transform: rotateY(0deg) translateZ(1px);
+}
+
+.card-face-back {
+  transform: rotateY(180deg) translateZ(1px);
+  -webkit-transform: rotateY(180deg) translateZ(1px);
 }
 
 .rotate-y-180 {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+/* Smooth hardware accelerated animations */
+.transition-flip {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* iOS tap highlight fix */
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Animations */
 @keyframes gentleFloat {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-8px) rotate(0.5deg);
+    transform: translateY(-6px);
   }
 }
 
@@ -86,29 +112,13 @@
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 0 12px rgba(167, 84, 112, 0);
-    transform: scale(1.03);
+    box-shadow: 0 0 0 10px rgba(167, 84, 112, 0);
+    transform: scale(1.02);
   }
 }
 
 .animate-seal-pulse {
   animation: sealPulse 2.8s ease-in-out infinite;
-}
-
-@keyframes shimmerGlow {
-  0% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 0.3;
-  }
-}
-
-.animate-shimmer-glow {
-  animation: shimmerGlow 3s ease-in-out infinite;
 }
 
 /* Baby Shower legacy page scoped styles */
